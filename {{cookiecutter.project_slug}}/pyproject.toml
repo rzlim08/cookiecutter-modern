@@ -1,8 +1,12 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "{{cookiecutter.project_slug}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.project_description}}"
-readme = "README.rst"
+readme = "README.md"
 authors = [
   {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}
 ]
@@ -20,8 +24,13 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "coverage",  # testing
+    "pytest", # testing
     "mypy",  # linting
     "ruff",  # linting
+]
+build = [
+    "build",
+    "twine"
 ]
 
 [project.urls]
@@ -37,7 +46,7 @@ package-dir = {"" = "app"}
 "*" = ["*.*"]
 
 [project.scripts]
-{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.cli:app"
+{{cookiecutter.project_slug}} = "cli:main"
 
 [tool.mypy]
 files = "."
