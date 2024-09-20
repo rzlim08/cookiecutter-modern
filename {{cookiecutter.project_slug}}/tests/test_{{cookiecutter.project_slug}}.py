@@ -5,4 +5,4 @@ def world():
     return "World"
 
 def test_trivial_hello_world(world):
-    assert "Hello" + world == "Hello World"
+    assert "Hello " + world == "Hello World"
