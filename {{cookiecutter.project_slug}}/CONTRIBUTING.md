@@ -59,17 +59,17 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
    ``` 
    python3 -m venv .venv
    source .venv/bin/activate
-   make install
+   make install-dev
    ```
 4. Create a branch for local development:
-
-    $ git checkout -b name-of-your-bugfix-or-feature
-
+    ```
+    git checkout -b name-of-your-bugfix-or-feature
+    ```
    Now you can make your changes locally.
 
 5. Commit your changes and push your branch to GitHub::
-
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
-
+    ```
+    git add .
+    git commit -m "Your detailed description of your changes."
+    git push origin name-of-your-bugfix-or-feature
+    ```
