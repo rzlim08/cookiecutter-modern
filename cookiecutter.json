@@ -1,0 +1,17 @@
+{
+  "full_name": "Ryan Lim",
+  "email": "rlim@example.com",
+  "github_username": "rzlim08",
+  "project_name": "Python Project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_description": "My project description",
+  "version": "0.0.1",
+  "open_source_license": [
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3",
+    "Not open source"
+  ]
+}
