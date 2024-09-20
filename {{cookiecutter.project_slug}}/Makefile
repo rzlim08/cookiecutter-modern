@@ -37,23 +37,24 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style
-	ruff check {{ cookiecutter.project_slug }}
+	ruff check app tests
 
 test: ## run tests quickly with the default Python
 	pytest . 
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source {{ cookiecutter.project_slug }} -m pytest
+	coverage run --source . -m pytest
 	coverage report -m
 	coverage html
 
 release: dist ## package and upload a release
 	twine upload dist/*
 
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
-	ls -l dist
+dist: clean install-build ## builds source and wheel package
+	python -m build --sdist --wheel 
+
+install-build: clean ## install the package to the active Python's site-packages for development
+	pip install '.[build]'
 
 install-dev: clean ## install the package to the active Python's site-packages for development
 	pip install -e '.[dev]'
