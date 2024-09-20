@@ -12,8 +12,8 @@ def main():
     args = parser.parse_args()
 
     # Main logic of the script
-    print("Replace this message by putting your code into {{cookiecutter.project_slug}}.cli.main")
     print("See argparse documentation at https://docs.python.org/3/library/argparse.html")
+    
 
 if __name__ == "__main__":
     main()
